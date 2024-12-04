@@ -7,7 +7,7 @@ UPDATE produit_ticket SET quantite = quantite + 3 WHERE id_ticket IN(6,7,8);
 
 -- Version 2 : requête imbriquée jointure
 UPDATE produit_ticket SET quantite = quantite + 3 WHERE id_ticket IN(
-(SELECT id_ticket FROM ticket INNER JOIN vendeur ON ticket.id_vendeur = vendeur.id_vendeur WHERE
+(SELECT id_ticket  FROM ticket INNER JOIN vendeur ON ticket.id_vendeur = vendeur.id_vendeur WHERE
 nom_vendeur = 'Durand' AND prenom_vendeur = 'Sophie')
 );
 
@@ -17,6 +17,12 @@ UPDATE produit_ticket SET quantite = quantite + 3 WHERE id_ticket IN(
 		(SELECT id_vendeur FROM vendeur WHERE nom_vendeur = 'Durand' AND prenom_vendeur = 'Sophie')
 	)
 );
+
+-- Version 4 : variable
+SET @ticket = (SELECT id_ticket  FROM ticket INNER JOIN vendeur ON ticket.id_vendeur = vendeur.id_vendeur WHERE
+nom_vendeur = 'Durand' AND prenom_vendeur = 'Sophie');
+
+UPDATE produit_ticket SET quantite = quantite + 3 WHERE id_ticket IN(@ticket);
 
 -- 2 Diminuer le montant de tous les produits de type meuble de 10 %,
 
