@@ -17,7 +17,7 @@ VALUES('Le Mystère de la Forêt', 'Un groupe d\'amis découvre un secret ancien
 ('L\'Île Mystérieuse','Un groupe de naufragés découvre une île pleine de mystères et de dangers.','2023-09-01', 350),
 ('Les Gardiens de la Galaxie','Une équipe de super-héros protège la galaxie contre des menaces interstellaires.','2023-10-01', 268); 
 
-INSERT INTO genre(libele)
+INSERT INTO genre(nom_genre)
 VALUES ('fanstastique'), ('science-fiction'), ('polar'), ('drame'), ('roman');
 
 INSERT INTO livre_genre(id_livre,id_genre)
