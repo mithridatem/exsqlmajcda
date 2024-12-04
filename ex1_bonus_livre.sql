@@ -38,7 +38,7 @@ VALUES('Victor', 'Hugo'),
 
 -- Créer 5 enregistrements dans la table livre qui inclus une référence à l'auteur 
 -- (valeur de la clé primaire id_auteur).
-INSERT INTO livre(titre, `resume`, date_sortie, id_auteur, nbr_page) VALUES
+INSERT INTO livre(titre, `description`, date_sortie, id_auteur, nbr_page) VALUES
 ('Le Château Hanté','Un détective enquête sur des phénomènes paranormaux dans un château hanté.', '2024-04-01', 1, 100),
 ('Les Aventuriers de l\'Espace','Un groupe d\'astronautes explore des planètes inconnues et rencontre des extraterrestres.','2024-05-01',2, 300),
 ('Le Secret de l\'Alchimiste','Un jeune apprenti découvre les secrets de l\'alchimie et part en quête de la pierre philosophale.','2024-06-01',3, 400),
